@@ -25,7 +25,6 @@ services:
       DB_DATABASE: msvc_cursos
       DB_USERNAME: root
       DB_PASSWORD: root
-      USUARIOS_URL: msvc-usuarios:8081
     networks:
       - spring
     depends_on:
