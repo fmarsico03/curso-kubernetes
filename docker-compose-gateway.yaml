@@ -12,10 +12,7 @@ services:
       CURSOS_URL: ${CURSOS_URL}
     networks:
       - spring
-    depends_on:
     restart: always
-
-volumes:
 
 networks:
   spring:
