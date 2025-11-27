@@ -2,8 +2,6 @@ services:
   mysql8-usuarios:
     container_name: mysql8-usuarios
     image: mysql:8
-    ports:
-      - "3307:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: msvc_usuarios
