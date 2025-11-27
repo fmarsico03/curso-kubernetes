@@ -8,8 +8,8 @@ services:
       - "8080:8080"
     environment:
       PORT: 8080
-      USUARIOS_URL: msvc-usuarios:8081
-      CURSOS_URL: msvc-cursos:8082
+      USUARIOS_URL: ${USUARIOS_URL}
+      CURSOS_URL: ${CURSOS_URL}
     networks:
       - spring
     depends_on:

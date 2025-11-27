@@ -8,6 +8,7 @@ COPY ./pom.xml /app
 COPY ./$MSVC_NAME/.mvn ./.mvn
 COPY ./$MSVC_NAME/mvnw .
 COPY ./$MSVC_NAME/pom.xml .
+RUN chmod +x mvnw
 
 RUN ./mvnw clean package -Dmaven.test.skip -Dmaven.main.skip -Dspring-boot.repackage.skip && rm -r ./target/
 

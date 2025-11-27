@@ -44,4 +44,6 @@ module "msvc_gateway" {
   compose_file  = "docker-compose-gateway.yaml"
   allowed_ports = [8080]
   vpc_id        = data.aws_vpc.default.id
+  usuarios_url = "${module.msvc_usuarios.private_ip}:8081"
+  cursos_url   = "${module.msvc_cursos.private_ip}:8082"
 }

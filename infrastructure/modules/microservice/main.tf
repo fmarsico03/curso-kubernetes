@@ -3,6 +3,7 @@ resource "aws_security_group" "this" {
   description = "SG for ${var.name}"
   vpc_id      = var.vpc_id
 
+  # Puertos de la app
   dynamic "ingress" {
     for_each = var.allowed_ports
     content {
@@ -12,6 +13,14 @@ resource "aws_security_group" "this" {
       protocol    = "tcp"
       cidr_blocks = ["0.0.0.0/0"]
     }
+  }
+  # SSH
+  ingress {
+    description = "SSH"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
@@ -32,6 +41,8 @@ resource "aws_instance" "microservice" {
     name         = var.name
     repo_url     = var.repo_url
     compose_file = var.compose_file
+    usuarios_url = var.usuarios_url
+    cursos_url   = var.cursos_url
   })
 
   tags = {
@@ -39,6 +50,11 @@ resource "aws_instance" "microservice" {
   }
 }
 
+
 output "public_ip" {
   value = aws_instance.microservice.public_ip
+}
+
+output "private_ip" {
+  value = aws_instance.microservice.private_ip
 }

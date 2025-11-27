@@ -36,3 +36,10 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Terraform ###
+# Terraform
+**/.terraform/
+**/.terraform/*
+*.tfstate
+*.tfstate.backup

@@ -27,3 +27,15 @@ variable "allowed_ports" {
 variable "vpc_id" {
   type = string
 }
+
+variable "usuarios_url" {
+  type    = string
+  default = ""
+}
+
+variable "cursos_url" {
+  type    = string
+  default = ""
+}
+
+
