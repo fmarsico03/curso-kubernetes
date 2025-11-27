@@ -9,6 +9,6 @@ chmod +x /usr/local/bin/docker-compose
 
 git clone ${repo_url} /app
 
-cd /app/${name}
+cd /app
 
 docker-compose -f ${compose_file} up -d
