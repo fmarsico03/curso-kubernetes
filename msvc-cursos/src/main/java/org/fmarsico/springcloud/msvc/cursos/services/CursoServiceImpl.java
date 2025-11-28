@@ -1,7 +1,5 @@
 package org.fmarsico.springcloud.msvc.cursos.services;
 
-import org.fmarsico.springcloud.msvc.cursos.clients.UsuarioClientRest;
-import org.fmarsico.springcloud.msvc.cursos.models.Usuario;
 import org.fmarsico.springcloud.msvc.cursos.models.entity.Curso;
 import org.fmarsico.springcloud.msvc.cursos.models.entity.CursoUsuario;
 import org.fmarsico.springcloud.msvc.cursos.repositories.CursoRepository;

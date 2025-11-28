@@ -23,6 +23,7 @@ services:
       DB_DATABASE: msvc_cursos
       DB_USERNAME: root
       DB_PASSWORD: root
+
     networks:
       - spring
     depends_on:

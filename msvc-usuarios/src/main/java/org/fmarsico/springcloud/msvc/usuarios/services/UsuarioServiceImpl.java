@@ -1,6 +1,5 @@
 package org.fmarsico.springcloud.msvc.usuarios.services;
 
-import org.fmarsico.springcloud.msvc.usuarios.client.CursoClienteRest;
 import org.fmarsico.springcloud.msvc.usuarios.models.entity.Usuario;
 import org.fmarsico.springcloud.msvc.usuarios.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +14,6 @@ public class UsuarioServiceImpl implements UsuarioService{
 
     @Autowired
     private UsuarioRepository repository;
-    @Autowired
-    private CursoClienteRest cliente;
     @Override
     @Transactional(readOnly = true)
     public List<Usuario> findAll() {
@@ -39,7 +36,6 @@ public class UsuarioServiceImpl implements UsuarioService{
     @Transactional
     public void delete(Long id) {
         repository.deleteById(id);
-        cliente.deleteUserFromAllCourses(id);
     }
 
     @Override
